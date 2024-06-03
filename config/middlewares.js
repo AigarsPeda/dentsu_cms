@@ -4,11 +4,8 @@ module.exports = [
   {
     name: "strapi::cors",
     config: {
-      config: {
-        origin: "*", // Adjust this as needed to specify allowed origins
-        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-        headers: ["Content-Type", "Authorization"],
-      },
+      enabled: true,
+      origin: ["*"], // or specify the exact domains
     },
   },
   "strapi::poweredBy",
