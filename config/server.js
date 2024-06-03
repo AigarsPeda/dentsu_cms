@@ -6,7 +6,7 @@ module.exports = ({ env }) => {
     app: {
       keys: env.array("APP_KEYS"),
     },
-    // url: env("STRAPI_URL"),
+    url: env("STRAPI_URL"),
   };
 
   console.log("Server config:", conf);
