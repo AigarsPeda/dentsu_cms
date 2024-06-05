@@ -1,4 +1,5 @@
 module.exports = [
+  "strapi::redirector",
   "strapi::errors",
   "strapi::security",
   {
