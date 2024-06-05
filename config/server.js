@@ -7,9 +7,10 @@ module.exports = ({ env }) => {
       keys: env.array("APP_KEYS"),
     },
     url: env("STRAPI_URL"),
+    // webhooks: {
+    //   populateRelations: env.bool("WEBHOOKS_POPULATE_RELATIONS", false),
+    // },
   };
-
-  console.log("Server config:", conf);
 
   return conf;
 };
