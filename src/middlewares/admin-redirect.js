@@ -1,5 +1,5 @@
 module.exports = (_config, { strapi }) => {
-  const redirects = ["/", "/index.html"].map((path) => ({
+  const redirects = ["/strapi/", "/index.html"].map((path) => ({
     method: "GET",
     path,
     handler: (ctx) => ctx.redirect("/admin"),
