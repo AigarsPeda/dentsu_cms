@@ -18,6 +18,11 @@
         "images",
         "videos"
       ]
+    },
+    "CallToAction": {
+      "type": "component",
+      "repeatable": false,
+      "component": "links.button"
     }
   }
 }

@@ -369,6 +369,7 @@ export interface SectionsMainHerro extends Schema.Component {
     MainTitle: Attribute.String & Attribute.Required;
     BackGroundImage: Attribute.Media<'images' | 'videos', true> &
       Attribute.Required;
+    CallToAction: Attribute.Component<'links.button'>;
   };
 }
 
