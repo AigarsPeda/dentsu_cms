@@ -201,7 +201,7 @@ export interface LinksButton extends Schema.Component {
   };
   attributes: {
     text: Attribute.String;
-    type: Attribute.Enumeration<['primary', 'secondary']>;
+    type: Attribute.Enumeration<['primary', 'secondary', 'callToAction']>;
   };
 }
 
