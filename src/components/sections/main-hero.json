@@ -1,27 +1,28 @@
 {
   "collectionName": "components_sections_main_heroes",
   "info": {
-    "displayName": "MainHero"
+    "displayName": "MainHero",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "MainHeroImage": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
     },
     "MainHeroTitle": {
       "type": "string",
       "required": true
     },
-    "MainHeroButton": {
+    "MainHeroCallToAction": {
       "type": "component",
       "repeatable": false,
-      "component": "links.button"
+      "component": "links.button-link"
     }
   }
 }

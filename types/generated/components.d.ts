@@ -363,12 +363,13 @@ export interface SectionsMainHero extends Schema.Component {
   collectionName: 'components_sections_main_heroes';
   info: {
     displayName: 'MainHero';
+    description: '';
   };
   attributes: {
     MainHeroImage: Attribute.Media<'images' | 'videos', true> &
       Attribute.Required;
     MainHeroTitle: Attribute.String & Attribute.Required;
-    MainHeroButton: Attribute.Component<'links.button'>;
+    MainHeroCallToAction: Attribute.Component<'links.button-link'>;
   };
 }
 
