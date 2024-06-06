@@ -1,5 +1,4 @@
 module.exports = (config, { strapi }) => {
-  console.log("redirectUrl", config.redirectFromRootTo);
   if (!config?.redirectFromRootTo) {
     return;
   }
