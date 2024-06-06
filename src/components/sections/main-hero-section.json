@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_main_hero_sections",
+  "info": {
+    "displayName": "MainHeroSection"
+  },
+  "options": {},
+  "attributes": {
+    "MainHeroSectionTitle": {
+      "type": "string",
+      "required": true
+    },
+    "MainHeroSectionImage": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "MainHeroSectionLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "links.button-link"
+    }
+  }
+}

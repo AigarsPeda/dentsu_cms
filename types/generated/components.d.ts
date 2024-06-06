@@ -187,7 +187,7 @@ export interface LinksButtonLink extends Schema.Component {
     url: Attribute.String;
     newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
     text: Attribute.String;
-    type: Attribute.Enumeration<['primary', 'secondary']>;
+    type: Attribute.Enumeration<['primary', 'secondary', 'callToAction']>;
   };
 }
 
@@ -359,17 +359,16 @@ export interface SectionsLeadForm extends Schema.Component {
   };
 }
 
-export interface SectionsMainHero extends Schema.Component {
-  collectionName: 'components_sections_main_heroes';
+export interface SectionsMainHeroSection extends Schema.Component {
+  collectionName: 'components_sections_main_hero_sections';
   info: {
-    displayName: 'MainHero';
-    description: '';
+    displayName: 'MainHeroSection';
   };
   attributes: {
-    MainHeroImage: Attribute.Media<'images' | 'videos', true> &
+    MainHeroSectionTitle: Attribute.String & Attribute.Required;
+    MainHeroSectionImage: Attribute.Media<'images' | 'videos', true> &
       Attribute.Required;
-    MainHeroTitle: Attribute.String & Attribute.Required;
-    MainHeroCallToAction: Attribute.Component<'links.button-link'>;
+    MainHeroSectionLink: Attribute.Component<'links.button-link'>;
   };
 }
 
@@ -516,7 +515,7 @@ declare module '@strapi/types' {
       'sections.hero': SectionsHero;
       'sections.large-video': SectionsLargeVideo;
       'sections.lead-form': SectionsLeadForm;
-      'sections.main-hero': SectionsMainHero;
+      'sections.main-hero-section': SectionsMainHeroSection;
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;
