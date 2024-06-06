@@ -359,17 +359,16 @@ export interface SectionsLeadForm extends Schema.Component {
   };
 }
 
-export interface SectionsMainHerro extends Schema.Component {
-  collectionName: 'components_sections_main_herros';
+export interface SectionsMainHero extends Schema.Component {
+  collectionName: 'components_sections_main_heroes';
   info: {
     displayName: 'MainHero';
-    description: '';
   };
   attributes: {
-    MainTitle: Attribute.String & Attribute.Required;
-    BackGroundImage: Attribute.Media<'images' | 'videos', true> &
+    MainHeroImage: Attribute.Media<'images' | 'videos', true> &
       Attribute.Required;
-    CallToAction: Attribute.Component<'links.button'>;
+    MainHeroTitle: Attribute.String & Attribute.Required;
+    MainHeroButton: Attribute.Component<'links.button'>;
   };
 }
 
@@ -516,7 +515,7 @@ declare module '@strapi/types' {
       'sections.hero': SectionsHero;
       'sections.large-video': SectionsLargeVideo;
       'sections.lead-form': SectionsLeadForm;
-      'sections.main-herro': SectionsMainHerro;
+      'sections.main-hero': SectionsMainHero;
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;
