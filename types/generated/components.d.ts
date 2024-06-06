@@ -362,7 +362,8 @@ export interface SectionsLeadForm extends Schema.Component {
 export interface SectionsMainHerro extends Schema.Component {
   collectionName: 'components_sections_main_herros';
   info: {
-    displayName: 'MainHerro';
+    displayName: 'MainHero';
+    description: '';
   };
   attributes: {
     MainTitle: Attribute.String & Attribute.Required;

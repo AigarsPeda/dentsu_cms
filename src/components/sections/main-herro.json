@@ -1,7 +1,8 @@
 {
   "collectionName": "components_sections_main_herros",
   "info": {
-    "displayName": "MainHerro"
+    "displayName": "MainHero",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,13 +11,13 @@
       "required": true
     },
     "BackGroundImage": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
     }
   }
 }
