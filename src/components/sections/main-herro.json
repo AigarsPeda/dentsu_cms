@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_main_herros",
+  "info": {
+    "displayName": "MainHerro"
+  },
+  "options": {},
+  "attributes": {
+    "MainTitle": {
+      "type": "string",
+      "required": true
+    },
+    "BackGroundImage": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

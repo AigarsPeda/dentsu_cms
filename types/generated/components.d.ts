@@ -359,6 +359,18 @@ export interface SectionsLeadForm extends Schema.Component {
   };
 }
 
+export interface SectionsMainHerro extends Schema.Component {
+  collectionName: 'components_sections_main_herros';
+  info: {
+    displayName: 'MainHerro';
+  };
+  attributes: {
+    MainTitle: Attribute.String & Attribute.Required;
+    BackGroundImage: Attribute.Media<'images' | 'videos', true> &
+      Attribute.Required;
+  };
+}
+
 export interface SectionsPricing extends Schema.Component {
   collectionName: 'components_sections_pricings';
   info: {
@@ -502,6 +514,7 @@ declare module '@strapi/types' {
       'sections.hero': SectionsHero;
       'sections.large-video': SectionsLargeVideo;
       'sections.lead-form': SectionsLeadForm;
+      'sections.main-herro': SectionsMainHerro;
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;
