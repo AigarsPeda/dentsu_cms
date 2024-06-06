@@ -5,10 +5,10 @@ module.exports = (config, { strapi }) => {
 
   const redirects = ["/", "/index.html"].map((path) => {
     return {
-      method: "GET",
       path,
-      handler: (ctx) => ctx.redirect("/strapi/admin/"),
+      method: "GET",
       config: { auth: false },
+      handler: (ctx) => ctx.redirect("/strapi/admin/"),
     };
   });
 
