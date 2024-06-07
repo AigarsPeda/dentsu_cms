@@ -21,13 +21,14 @@
 module.exports = ({ env }) => [
   "strapi::errors",
   "strapi::security",
-  {
-    name: "strapi::cors",
-    config: {
-      enabled: true,
-      origin: ["*"],
-    },
-  },
+  // {
+  //   name: "strapi::cors",
+  //   config: {
+  //     enabled: true,
+  //     origin: ["*"],
+  //   },
+  // },
+  "strapi::cors",
   "strapi::poweredBy",
   "strapi::logger",
   "strapi::query",

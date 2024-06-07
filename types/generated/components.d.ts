@@ -60,6 +60,18 @@ export interface ElementsFooterSection extends Schema.Component {
   };
 }
 
+export interface ElementsLocales extends Schema.Component {
+  collectionName: 'components_elements_locales';
+  info: {
+    displayName: 'locales';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    code: Attribute.String & Attribute.Required;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface ElementsLogos extends Schema.Component {
   collectionName: 'components_elements_logos';
   info: {
@@ -172,6 +184,7 @@ export interface LayoutNavbar extends Schema.Component {
     links: Attribute.Component<'links.link', true>;
     button: Attribute.Component<'links.button-link'>;
     navbarLogo: Attribute.Component<'layout.logo'>;
+    locales: Attribute.Component<'elements.locales', true>;
   };
 }
 
@@ -495,6 +508,7 @@ declare module '@strapi/types' {
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
       'elements.footer-section': ElementsFooterSection;
+      'elements.locales': ElementsLocales;
       'elements.logos': ElementsLogos;
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;

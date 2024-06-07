@@ -22,6 +22,12 @@
       "type": "component",
       "repeatable": false,
       "component": "layout.logo"
+    },
+    "locales": {
+      "displayName": "locales",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.locales"
     }
   }
 }
