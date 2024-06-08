@@ -39,7 +39,8 @@
         "sections.lead-form",
         "sections.features",
         "sections.heading",
-        "sections.main-hero-section"
+        "sections.hero-large-section",
+        "sections.info-block"
       ],
       "pluginOptions": {
         "i18n": {

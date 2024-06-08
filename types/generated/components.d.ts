@@ -60,6 +60,18 @@ export interface ElementsFooterSection extends Schema.Component {
   };
 }
 
+export interface ElementsHeroLarge extends Schema.Component {
+  collectionName: 'components_elements_hero_larges';
+  info: {
+    displayName: 'Hero Large';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    img: Attribute.Media<'images' | 'videos', true>;
+  };
+}
+
 export interface ElementsLocales extends Schema.Component {
   collectionName: 'components_elements_locales';
   info: {
@@ -324,6 +336,19 @@ export interface SectionsHeading extends Schema.Component {
   };
 }
 
+export interface SectionsHeroLargeSection extends Schema.Component {
+  collectionName: 'components_sections_hero_large_sections';
+  info: {
+    displayName: 'Hero Large Section';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text & Attribute.Required;
+    picture: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
+  };
+}
+
 export interface SectionsHero extends Schema.Component {
   collectionName: 'components_slices_heroes';
   info: {
@@ -337,6 +362,20 @@ export interface SectionsHero extends Schema.Component {
     description: Attribute.String & Attribute.Required;
     picture: Attribute.Media<'images'> & Attribute.Required;
     buttons: Attribute.Component<'links.button-link', true>;
+  };
+}
+
+export interface SectionsInfoBlock extends Schema.Component {
+  collectionName: 'components_sections_info_blocks';
+  info: {
+    displayName: 'Info Block';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    description_2: Attribute.Text;
+    description_3: Attribute.Text;
   };
 }
 
@@ -369,19 +408,6 @@ export interface SectionsLeadForm extends Schema.Component {
     submitButton: Attribute.Component<'links.button'>;
     location: Attribute.String;
     description: Attribute.Text;
-  };
-}
-
-export interface SectionsMainHeroSection extends Schema.Component {
-  collectionName: 'components_sections_main_hero_sections';
-  info: {
-    displayName: 'MainHeroSection';
-  };
-  attributes: {
-    MainHeroSectionTitle: Attribute.String & Attribute.Required;
-    MainHeroSectionImage: Attribute.Media<'images' | 'videos', true> &
-      Attribute.Required;
-    MainHeroSectionLink: Attribute.Component<'links.button-link'>;
   };
 }
 
@@ -508,6 +534,7 @@ declare module '@strapi/types' {
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
       'elements.footer-section': ElementsFooterSection;
+      'elements.hero-large': ElementsHeroLarge;
       'elements.locales': ElementsLocales;
       'elements.logos': ElementsLogos;
       'elements.notification-banner': ElementsNotificationBanner;
@@ -526,10 +553,11 @@ declare module '@strapi/types' {
       'sections.feature-rows-group': SectionsFeatureRowsGroup;
       'sections.features': SectionsFeatures;
       'sections.heading': SectionsHeading;
+      'sections.hero-large-section': SectionsHeroLargeSection;
       'sections.hero': SectionsHero;
+      'sections.info-block': SectionsInfoBlock;
       'sections.large-video': SectionsLargeVideo;
       'sections.lead-form': SectionsLeadForm;
-      'sections.main-hero-section': SectionsMainHeroSection;
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;

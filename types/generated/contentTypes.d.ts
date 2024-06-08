@@ -1064,7 +1064,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.lead-form',
         'sections.features',
         'sections.heading',
-        'sections.main-hero-section'
+        'sections.hero-large-section',
+        'sections.info-block'
       ]
     > &
       Attribute.SetPluginOptions<{
