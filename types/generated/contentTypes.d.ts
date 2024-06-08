@@ -1068,7 +1068,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.info-block',
         'sections.info-block-with-image',
         'sections.client-section',
-        'sections.logos-section'
+        'sections.logos-section',
+        'sections.contact-us'
       ]
     > &
       Attribute.SetPluginOptions<{

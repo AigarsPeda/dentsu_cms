@@ -13,6 +13,20 @@ export interface ElementsClient extends Schema.Component {
   };
 }
 
+export interface ElementsEmployee extends Schema.Component {
+  collectionName: 'components_elements_employees';
+  info: {
+    displayName: 'Employee';
+    description: '';
+  };
+  attributes: {
+    position: Attribute.String & Attribute.Required;
+    email: Attribute.String & Attribute.Required;
+    media: Attribute.Media<'images'> & Attribute.Required;
+    name: Attribute.String;
+  };
+}
+
 export interface ElementsFeatureColumn extends Schema.Component {
   collectionName: 'components_slices_feature_columns';
   info: {
@@ -308,6 +322,22 @@ export interface SectionsClientSection extends Schema.Component {
   };
 }
 
+export interface SectionsContactUs extends Schema.Component {
+  collectionName: 'components_sections_contact_uses';
+  info: {
+    displayName: 'Contact us';
+    description: '';
+  };
+  attributes: {
+    feature: Attribute.Component<'elements.employee', true>;
+    title: Attribute.String;
+    description: Attribute.Text;
+    isContactUsButton: Attribute.Boolean & Attribute.DefaultTo<true>;
+    contactEmail: Attribute.String;
+    buttonTitle: Attribute.String;
+  };
+}
+
 export interface SectionsFeatureColumnsGroup extends Schema.Component {
   collectionName: 'components_slices_feature_columns_groups';
   info: {
@@ -575,6 +605,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'elements.client': ElementsClient;
+      'elements.employee': ElementsEmployee;
       'elements.feature-column': ElementsFeatureColumn;
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
@@ -595,6 +626,7 @@ declare module '@strapi/types' {
       'meta.metadata': MetaMetadata;
       'sections.bottom-actions': SectionsBottomActions;
       'sections.client-section': SectionsClientSection;
+      'sections.contact-us': SectionsContactUs;
       'sections.feature-columns-group': SectionsFeatureColumnsGroup;
       'sections.feature-rows-group': SectionsFeatureRowsGroup;
       'sections.features': SectionsFeatures;
