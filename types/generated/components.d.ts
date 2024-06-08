@@ -365,6 +365,17 @@ export interface SectionsHero extends Schema.Component {
   };
 }
 
+export interface SectionsInfoBlockWithImage extends Schema.Component {
+  collectionName: 'components_sections_info_block_with_images';
+  info: {
+    displayName: 'Info Block With Image';
+  };
+  attributes: {
+    description: Attribute.Text & Attribute.Required;
+    picture: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
+  };
+}
+
 export interface SectionsInfoBlock extends Schema.Component {
   collectionName: 'components_sections_info_blocks';
   info: {
@@ -555,6 +566,7 @@ declare module '@strapi/types' {
       'sections.heading': SectionsHeading;
       'sections.hero-large-section': SectionsHeroLargeSection;
       'sections.hero': SectionsHero;
+      'sections.info-block-with-image': SectionsInfoBlockWithImage;
       'sections.info-block': SectionsInfoBlock;
       'sections.large-video': SectionsLargeVideo;
       'sections.lead-form': SectionsLeadForm;

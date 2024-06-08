@@ -40,7 +40,8 @@
         "sections.features",
         "sections.heading",
         "sections.hero-large-section",
-        "sections.info-block"
+        "sections.info-block",
+        "sections.info-block-with-image"
       ],
       "pluginOptions": {
         "i18n": {

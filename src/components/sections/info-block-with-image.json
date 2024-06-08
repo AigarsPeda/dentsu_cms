@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_info_block_with_images",
+  "info": {
+    "displayName": "Info Block With Image"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "picture": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}
