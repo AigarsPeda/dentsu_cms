@@ -41,7 +41,8 @@
         "sections.heading",
         "sections.hero-large-section",
         "sections.info-block",
-        "sections.info-block-with-image"
+        "sections.info-block-with-image",
+        "sections.client"
       ],
       "pluginOptions": {
         "i18n": {

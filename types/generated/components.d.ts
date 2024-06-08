@@ -1,5 +1,14 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ElementsClient extends Schema.Component {
+  collectionName: 'components_elements_clients';
+  info: {
+    displayName: 'Client';
+    description: '';
+  };
+  attributes: {};
+}
+
 export interface ElementsFeatureColumn extends Schema.Component {
   collectionName: 'components_slices_feature_columns';
   info: {
@@ -35,15 +44,12 @@ export interface ElementsFeature extends Schema.Component {
   collectionName: 'components_elements_features';
   info: {
     displayName: 'Feature';
+    description: '';
   };
   attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
     media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    showLink: Attribute.Boolean & Attribute.DefaultTo<false>;
     newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
     url: Attribute.String;
-    text: Attribute.String;
   };
 }
 
@@ -288,6 +294,18 @@ export interface SectionsBottomActions extends Schema.Component {
   };
 }
 
+export interface SectionsClient extends Schema.Component {
+  collectionName: 'components_sections_clients';
+  info: {
+    displayName: 'Clients';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    feature: Attribute.Component<'elements.feature', true>;
+  };
+}
+
 export interface SectionsFeatureColumnsGroup extends Schema.Component {
   collectionName: 'components_slices_feature_columns_groups';
   info: {
@@ -369,10 +387,12 @@ export interface SectionsInfoBlockWithImage extends Schema.Component {
   collectionName: 'components_sections_info_block_with_images';
   info: {
     displayName: 'Info Block With Image';
+    description: '';
   };
   attributes: {
     description: Attribute.Text & Attribute.Required;
     picture: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
+    pictureOnRight: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -541,6 +561,7 @@ export interface SharedVideoEmbed extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'elements.client': ElementsClient;
       'elements.feature-column': ElementsFeatureColumn;
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
@@ -560,6 +581,7 @@ declare module '@strapi/types' {
       'links.social-link': LinksSocialLink;
       'meta.metadata': MetaMetadata;
       'sections.bottom-actions': SectionsBottomActions;
+      'sections.client': SectionsClient;
       'sections.feature-columns-group': SectionsFeatureColumnsGroup;
       'sections.feature-rows-group': SectionsFeatureRowsGroup;
       'sections.features': SectionsFeatures;
