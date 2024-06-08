@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_testings",
+  "info": {
+    "displayName": "testing",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

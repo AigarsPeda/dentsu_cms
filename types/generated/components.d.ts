@@ -6,7 +6,11 @@ export interface ElementsClient extends Schema.Component {
     displayName: 'Client';
     description: '';
   };
-  attributes: {};
+  attributes: {
+    url: Attribute.String;
+    isNewTab: Attribute.Boolean & Attribute.DefaultTo<true>;
+    media: Attribute.Media<'images'>;
+  };
 }
 
 export interface ElementsFeatureColumn extends Schema.Component {
@@ -90,19 +94,6 @@ export interface ElementsLocales extends Schema.Component {
   };
 }
 
-export interface ElementsLogos extends Schema.Component {
-  collectionName: 'components_elements_logos';
-  info: {
-    name: 'logos';
-    displayName: 'Logos';
-    icon: 'apple-alt';
-  };
-  attributes: {
-    title: Attribute.String;
-    logo: Attribute.Media<'images'>;
-  };
-}
-
 export interface ElementsNotificationBanner extends Schema.Component {
   collectionName: 'components_elements_notification_banners';
   info: {
@@ -155,6 +146,17 @@ export interface ElementsTestimonial extends Schema.Component {
     picture: Attribute.Media<'images'> & Attribute.Required;
     text: Attribute.Text & Attribute.Required;
     authorName: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ElementsTesting extends Schema.Component {
+  collectionName: 'components_elements_testings';
+  info: {
+    displayName: 'testing';
+    description: '';
+  };
+  attributes: {
+    media: Attribute.Media<'images'> & Attribute.Required;
   };
 }
 
@@ -294,15 +296,15 @@ export interface SectionsBottomActions extends Schema.Component {
   };
 }
 
-export interface SectionsClient extends Schema.Component {
-  collectionName: 'components_sections_clients';
+export interface SectionsClientSection extends Schema.Component {
+  collectionName: 'components_sections_client_sections';
   info: {
-    displayName: 'Clients';
+    displayName: 'Client section';
     description: '';
   };
   attributes: {
+    feature: Attribute.Component<'elements.client', true>;
     title: Attribute.String;
-    feature: Attribute.Component<'elements.feature', true>;
   };
 }
 
@@ -442,6 +444,17 @@ export interface SectionsLeadForm extends Schema.Component {
   };
 }
 
+export interface SectionsLogosSection extends Schema.Component {
+  collectionName: 'components_sections_logos_sections';
+  info: {
+    displayName: 'Logos section';
+    description: '';
+  };
+  attributes: {
+    feature: Attribute.Component<'elements.testing', true>;
+  };
+}
+
 export interface SectionsPricing extends Schema.Component {
   collectionName: 'components_sections_pricings';
   info: {
@@ -568,10 +581,10 @@ declare module '@strapi/types' {
       'elements.footer-section': ElementsFooterSection;
       'elements.hero-large': ElementsHeroLarge;
       'elements.locales': ElementsLocales;
-      'elements.logos': ElementsLogos;
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;
       'elements.testimonial': ElementsTestimonial;
+      'elements.testing': ElementsTesting;
       'layout.footer': LayoutFooter;
       'layout.logo': LayoutLogo;
       'layout.navbar': LayoutNavbar;
@@ -581,7 +594,7 @@ declare module '@strapi/types' {
       'links.social-link': LinksSocialLink;
       'meta.metadata': MetaMetadata;
       'sections.bottom-actions': SectionsBottomActions;
-      'sections.client': SectionsClient;
+      'sections.client-section': SectionsClientSection;
       'sections.feature-columns-group': SectionsFeatureColumnsGroup;
       'sections.feature-rows-group': SectionsFeatureRowsGroup;
       'sections.features': SectionsFeatures;
@@ -592,6 +605,7 @@ declare module '@strapi/types' {
       'sections.info-block': SectionsInfoBlock;
       'sections.large-video': SectionsLargeVideo;
       'sections.lead-form': SectionsLeadForm;
+      'sections.logos-section': SectionsLogosSection;
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;

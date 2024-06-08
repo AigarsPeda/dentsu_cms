@@ -5,5 +5,21 @@
     "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "isNewTab": {
+      "type": "boolean",
+      "default": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
 }
