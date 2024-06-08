@@ -181,9 +181,6 @@ export interface LayoutFooter extends Schema.Component {
     description: '';
   };
   attributes: {
-    footerLogo: Attribute.Component<'layout.logo'>;
-    menuLinks: Attribute.Component<'links.link', true>;
-    legalLinks: Attribute.Component<'links.link', true>;
     socialLinks: Attribute.Component<'links.social-link', true>;
     categories: Attribute.Relation<
       'layout.footer',
