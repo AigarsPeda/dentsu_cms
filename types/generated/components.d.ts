@@ -182,11 +182,10 @@ export interface LayoutFooter extends Schema.Component {
   };
   attributes: {
     socialLinks: Attribute.Component<'links.social-link', true>;
-    categories: Attribute.Relation<
-      'layout.footer',
-      'oneToMany',
-      'api::category.category'
-    >;
+    LegalLink: Attribute.Component<'links.link', true>;
+    title: Attribute.String;
+    copyright: Attribute.String;
+    relatedLink: Attribute.Component<'links.link', true>;
   };
 }
 

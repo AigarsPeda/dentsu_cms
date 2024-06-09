@@ -11,10 +11,21 @@
       "repeatable": true,
       "component": "links.social-link"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category"
+    "LegalLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.link"
+    },
+    "title": {
+      "type": "string"
+    },
+    "copyright": {
+      "type": "string"
+    },
+    "relatedLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.link"
     }
   }
 }
