@@ -11,7 +11,7 @@
       "repeatable": true,
       "component": "links.social-link"
     },
-    "LegalLink": {
+    "legalLinks": {
       "type": "component",
       "repeatable": true,
       "component": "links.link"
@@ -22,7 +22,7 @@
     "copyright": {
       "type": "string"
     },
-    "relatedLink": {
+    "menuLinks": {
       "type": "component",
       "repeatable": true,
       "component": "links.link"
