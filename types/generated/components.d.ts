@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ElementsBlogItem extends Schema.Component {
+  collectionName: 'components_elements_blog_items';
+  info: {
+    displayName: 'Blog Item';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+    media: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
+  };
+}
+
 export interface ElementsClient extends Schema.Component {
   collectionName: 'components_elements_clients';
   info: {
@@ -145,6 +158,21 @@ export interface ElementsPlan extends Schema.Component {
       'oneToMany',
       'api::product-feature.product-feature'
     >;
+  };
+}
+
+export interface ElementsPostPreviewItem extends Schema.Component {
+  collectionName: 'components_elements_post_preview_items';
+  info: {
+    displayName: 'Post Preview Item';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    postUrl: Attribute.String & Attribute.Required;
+    media: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
+    isNewTab: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -491,6 +519,27 @@ export interface SectionsLogosSection extends Schema.Component {
   };
 }
 
+export interface SectionsPageTitle extends Schema.Component {
+  collectionName: 'components_sections_page_titles';
+  info: {
+    displayName: 'Page Title';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
+export interface SectionsPostSection extends Schema.Component {
+  collectionName: 'components_sections_post_sections';
+  info: {
+    displayName: 'Post section';
+    description: '';
+  };
+  attributes: {
+    feature: Attribute.Component<'elements.post-preview-item', true>;
+  };
+}
+
 export interface SectionsPricing extends Schema.Component {
   collectionName: 'components_sections_pricings';
   info: {
@@ -610,6 +659,7 @@ export interface SharedVideoEmbed extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'elements.blog-item': ElementsBlogItem;
       'elements.client': ElementsClient;
       'elements.employee': ElementsEmployee;
       'elements.feature-column': ElementsFeatureColumn;
@@ -620,6 +670,7 @@ declare module '@strapi/types' {
       'elements.locales': ElementsLocales;
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;
+      'elements.post-preview-item': ElementsPostPreviewItem;
       'elements.testimonial': ElementsTestimonial;
       'elements.testing': ElementsTesting;
       'layout.footer': LayoutFooter;
@@ -644,6 +695,8 @@ declare module '@strapi/types' {
       'sections.large-video': SectionsLargeVideo;
       'sections.lead-form': SectionsLeadForm;
       'sections.logos-section': SectionsLogosSection;
+      'sections.page-title': SectionsPageTitle;
+      'sections.post-section': SectionsPostSection;
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;
