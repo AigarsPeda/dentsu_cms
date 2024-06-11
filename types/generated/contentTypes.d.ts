@@ -1071,7 +1071,9 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.logos-section',
         'sections.contact-us',
         'sections.page-title',
-        'sections.post-section'
+        'sections.post-section',
+        'sections.large-info-section',
+        'sections.customer-feedback'
       ]
     > &
       Attribute.SetPluginOptions<{

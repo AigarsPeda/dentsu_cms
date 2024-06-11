@@ -84,6 +84,20 @@ export interface ElementsFeature extends Schema.Component {
   };
 }
 
+export interface ElementsFeedback extends Schema.Component {
+  collectionName: 'components_elements_feedbacks';
+  info: {
+    displayName: 'feedback';
+    description: '';
+  };
+  attributes: {
+    feedback: Attribute.Text & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    position: Attribute.String;
+    company: Attribute.String;
+  };
+}
+
 export interface ElementsFooterSection extends Schema.Component {
   collectionName: 'components_links_footer_sections';
   info: {
@@ -372,6 +386,17 @@ export interface SectionsContactUs extends Schema.Component {
   };
 }
 
+export interface SectionsCustomerFeedback extends Schema.Component {
+  collectionName: 'components_sections_customer_feedbacks';
+  info: {
+    displayName: 'Customer Feedback';
+    description: '';
+  };
+  attributes: {
+    feature: Attribute.Component<'elements.feedback', true>;
+  };
+}
+
 export interface SectionsFeatureColumnsGroup extends Schema.Component {
   collectionName: 'components_slices_feature_columns_groups';
   info: {
@@ -473,6 +498,16 @@ export interface SectionsInfoBlock extends Schema.Component {
     description: Attribute.Text & Attribute.Required;
     description_2: Attribute.Text;
     description_3: Attribute.Text;
+  };
+}
+
+export interface SectionsLargeInfoSection extends Schema.Component {
+  collectionName: 'components_sections_large_info_sections';
+  info: {
+    displayName: 'Large Info section';
+  };
+  attributes: {
+    info: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -665,6 +700,7 @@ declare module '@strapi/types' {
       'elements.feature-column': ElementsFeatureColumn;
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
+      'elements.feedback': ElementsFeedback;
       'elements.footer-section': ElementsFooterSection;
       'elements.hero-large': ElementsHeroLarge;
       'elements.locales': ElementsLocales;
@@ -684,6 +720,7 @@ declare module '@strapi/types' {
       'sections.bottom-actions': SectionsBottomActions;
       'sections.client-section': SectionsClientSection;
       'sections.contact-us': SectionsContactUs;
+      'sections.customer-feedback': SectionsCustomerFeedback;
       'sections.feature-columns-group': SectionsFeatureColumnsGroup;
       'sections.feature-rows-group': SectionsFeatureRowsGroup;
       'sections.features': SectionsFeatures;
@@ -692,6 +729,7 @@ declare module '@strapi/types' {
       'sections.hero': SectionsHero;
       'sections.info-block-with-image': SectionsInfoBlockWithImage;
       'sections.info-block': SectionsInfoBlock;
+      'sections.large-info-section': SectionsLargeInfoSection;
       'sections.large-video': SectionsLargeVideo;
       'sections.lead-form': SectionsLeadForm;
       'sections.logos-section': SectionsLogosSection;
