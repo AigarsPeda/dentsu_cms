@@ -9,10 +9,6 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text",
-      "required": true
-    },
     "picture": {
       "type": "media",
       "multiple": true,

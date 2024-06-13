@@ -190,6 +190,20 @@ export interface ElementsPostPreviewItem extends Schema.Component {
   };
 }
 
+export interface ElementsTest extends Schema.Component {
+  collectionName: 'components_elements_tests';
+  info: {
+    displayName: 'post with image';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text & Attribute.Required;
+    pictureOnRight: Attribute.Boolean & Attribute.DefaultTo<false>;
+    media: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface ElementsTestimonial extends Schema.Component {
   collectionName: 'components_slices_testimonials';
   info: {
@@ -453,7 +467,6 @@ export interface SectionsHeroLargeSection extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Text & Attribute.Required;
     picture: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
   };
 }
@@ -564,6 +577,17 @@ export interface SectionsPageTitle extends Schema.Component {
   };
 }
 
+export interface SectionsPostSectionWithImage extends Schema.Component {
+  collectionName: 'components_sections_post_section_with_images';
+  info: {
+    displayName: 'Post section with image';
+    description: '';
+  };
+  attributes: {
+    feature: Attribute.Component<'elements.test'>;
+  };
+}
+
 export interface SectionsPostSection extends Schema.Component {
   collectionName: 'components_sections_post_sections';
   info: {
@@ -612,6 +636,19 @@ export interface SectionsTestimonialsGroup extends Schema.Component {
     title: Attribute.String;
     description: Attribute.Text;
     testimonials: Attribute.Component<'elements.testimonial', true>;
+  };
+}
+
+export interface SectionsWorkHeadlineWithImage extends Schema.Component {
+  collectionName: 'components_sections_work_headline_with_images';
+  info: {
+    displayName: 'Work Headline With Image';
+    description: '';
+  };
+  attributes: {
+    headline: Attribute.String & Attribute.Required;
+    picture: Attribute.Media<'images' | 'videos', true>;
+    description: Attribute.Text;
   };
 }
 
@@ -707,6 +744,7 @@ declare module '@strapi/types' {
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;
       'elements.post-preview-item': ElementsPostPreviewItem;
+      'elements.test': ElementsTest;
       'elements.testimonial': ElementsTestimonial;
       'elements.testing': ElementsTesting;
       'layout.footer': LayoutFooter;
@@ -734,10 +772,12 @@ declare module '@strapi/types' {
       'sections.lead-form': SectionsLeadForm;
       'sections.logos-section': SectionsLogosSection;
       'sections.page-title': SectionsPageTitle;
+      'sections.post-section-with-image': SectionsPostSectionWithImage;
       'sections.post-section': SectionsPostSection;
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;
+      'sections.work-headline-with-image': SectionsWorkHeadlineWithImage;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
