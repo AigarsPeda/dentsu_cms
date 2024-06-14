@@ -21,6 +21,9 @@ const populate = {
           },
         },
       },
+      statistic: {
+        populate: true,
+      },
       testimonials: {
         populate: {
           picture: {
@@ -39,7 +42,7 @@ const populate = {
   seo: {
     fields: ["metaTitle", "metaDescription"],
     populate: { shareImage: true },
-  }
+  },
 };
 
 module.exports = (config, { strapi }) => {

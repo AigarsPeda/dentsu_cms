@@ -815,7 +815,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     >;
     blocks: Attribute.DynamicZone<
       [
-        'shared.media',
         'shared.quote',
         'shared.rich-text',
         'shared.slider',
@@ -1075,7 +1074,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.large-info-section',
         'sections.customer-feedback',
         'sections.work-headline-with-image',
-        'sections.post-section-with-image'
+        'sections.post-section-with-image',
+        'sections.post-statistic-with-image'
       ]
     > &
       Attribute.SetPluginOptions<{

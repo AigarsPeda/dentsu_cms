@@ -50,7 +50,8 @@
         "sections.large-info-section",
         "sections.customer-feedback",
         "sections.work-headline-with-image",
-        "sections.post-section-with-image"
+        "sections.post-section-with-image",
+        "sections.post-statistic-with-image"
       ],
       "pluginOptions": {
         "i18n": {

@@ -190,6 +190,31 @@ export interface ElementsPostPreviewItem extends Schema.Component {
   };
 }
 
+export interface ElementsSomeThing extends Schema.Component {
+  collectionName: 'components_elements_some_things';
+  info: {
+    displayName: 'Statistic With Image';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String;
+    media: Attribute.Media<'images' | 'videos', true>;
+    statisticOnRight: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ElementsStatistic extends Schema.Component {
+  collectionName: 'components_elements_statistics';
+  info: {
+    displayName: 'Statistic';
+  };
+  attributes: {
+    statistic: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface ElementsTest extends Schema.Component {
   collectionName: 'components_elements_tests';
   info: {
@@ -599,6 +624,18 @@ export interface SectionsPostSection extends Schema.Component {
   };
 }
 
+export interface SectionsPostStatisticWithImage extends Schema.Component {
+  collectionName: 'components_sections_post_statistic_with_images';
+  info: {
+    displayName: 'Post statistic with image';
+    description: '';
+  };
+  attributes: {
+    feature: Attribute.Component<'elements.some-thing'>;
+    statistic: Attribute.Component<'elements.statistic', true>;
+  };
+}
+
 export interface SectionsPricing extends Schema.Component {
   collectionName: 'components_sections_pricings';
   info: {
@@ -652,15 +689,13 @@ export interface SectionsWorkHeadlineWithImage extends Schema.Component {
   };
 }
 
-export interface SharedMedia extends Schema.Component {
-  collectionName: 'components_shared_media';
+export interface SharedDescriptionMedia extends Schema.Component {
+  collectionName: 'components_shared_description_medias';
   info: {
-    displayName: 'Media';
-    icon: 'file-video';
-    description: '';
+    displayName: 'Description Media';
   };
   attributes: {
-    file: Attribute.Media<'images'>;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -744,6 +779,8 @@ declare module '@strapi/types' {
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;
       'elements.post-preview-item': ElementsPostPreviewItem;
+      'elements.some-thing': ElementsSomeThing;
+      'elements.statistic': ElementsStatistic;
       'elements.test': ElementsTest;
       'elements.testimonial': ElementsTestimonial;
       'elements.testing': ElementsTesting;
@@ -774,11 +811,12 @@ declare module '@strapi/types' {
       'sections.page-title': SectionsPageTitle;
       'sections.post-section-with-image': SectionsPostSectionWithImage;
       'sections.post-section': SectionsPostSection;
+      'sections.post-statistic-with-image': SectionsPostStatisticWithImage;
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;
       'sections.work-headline-with-image': SectionsWorkHeadlineWithImage;
-      'shared.media': SharedMedia;
+      'shared.description-media': SharedDescriptionMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
