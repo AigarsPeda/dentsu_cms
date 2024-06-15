@@ -1069,7 +1069,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.post-section-with-image',
         'sections.post-statistic-with-image',
         'sections.image-carousel',
-        'sections.services-headline-with-image'
+        'sections.services-headline-with-image',
+        'sections.services'
       ]
     > &
       Attribute.SetPluginOptions<{

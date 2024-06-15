@@ -145,6 +145,18 @@ export interface ElementsPostPreviewItem extends Schema.Component {
   };
 }
 
+export interface ElementsService extends Schema.Component {
+  collectionName: 'components_elements_services';
+  info: {
+    displayName: 'Service';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface ElementsSomeThing extends Schema.Component {
   collectionName: 'components_elements_some_things';
   info: {
@@ -548,6 +560,19 @@ export interface SectionsServicesHeadlineWithImage extends Schema.Component {
   };
 }
 
+export interface SectionsServices extends Schema.Component {
+  collectionName: 'components_sections_services';
+  info: {
+    displayName: 'Services';
+    description: '';
+  };
+  attributes: {
+    services: Attribute.Component<'elements.service', true>;
+    pictureOnRight: Attribute.Boolean & Attribute.DefaultTo<false>;
+    media: Attribute.Media<'images' | 'videos', true>;
+  };
+}
+
 export interface SectionsWorkHeadlineWithImage extends Schema.Component {
   collectionName: 'components_sections_work_headline_with_images';
   info: {
@@ -648,6 +673,7 @@ declare module '@strapi/types' {
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;
       'elements.post-preview-item': ElementsPostPreviewItem;
+      'elements.service': ElementsService;
       'elements.some-thing': ElementsSomeThing;
       'elements.statistic': ElementsStatistic;
       'elements.test': ElementsTest;
@@ -678,6 +704,7 @@ declare module '@strapi/types' {
       'sections.post-statistic-with-image': SectionsPostStatisticWithImage;
       'sections.rich-text': SectionsRichText;
       'sections.services-headline-with-image': SectionsServicesHeadlineWithImage;
+      'sections.services': SectionsServices;
       'sections.work-headline-with-image': SectionsWorkHeadlineWithImage;
       'shared.description-media': SharedDescriptionMedia;
       'shared.quote': SharedQuote;

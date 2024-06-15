@@ -32,6 +32,9 @@ const populate = {
           },
         },
       },
+      services: {
+        populate: true,
+      },
       statistic: {
         populate: true,
       },

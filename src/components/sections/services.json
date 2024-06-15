@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_services",
+  "info": {
+    "displayName": "Services",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "services": {
+      "displayName": "Service",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.service"
+    },
+    "pictureOnRight": {
+      "type": "boolean",
+      "default": false
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
