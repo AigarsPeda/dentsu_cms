@@ -44,7 +44,8 @@
         "sections.work-headline-with-image",
         "sections.post-section-with-image",
         "sections.post-statistic-with-image",
-        "sections.image-carousel"
+        "sections.image-carousel",
+        "sections.services-headline-with-image"
       ],
       "pluginOptions": {
         "i18n": {

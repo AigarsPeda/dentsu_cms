@@ -536,10 +536,22 @@ export interface SectionsRichText extends Schema.Component {
   };
 }
 
+export interface SectionsServicesHeadlineWithImage extends Schema.Component {
+  collectionName: 'components_sections_services_headline_with_images';
+  info: {
+    displayName: 'Services Headline With Image';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    media: Attribute.Media<'images' | 'videos', true>;
+  };
+}
+
 export interface SectionsWorkHeadlineWithImage extends Schema.Component {
   collectionName: 'components_sections_work_headline_with_images';
   info: {
-    displayName: 'Work Headline With Image';
+    displayName: 'Post Headline With Image';
     description: '';
   };
   attributes: {
@@ -665,6 +677,7 @@ declare module '@strapi/types' {
       'sections.post-section': SectionsPostSection;
       'sections.post-statistic-with-image': SectionsPostStatisticWithImage;
       'sections.rich-text': SectionsRichText;
+      'sections.services-headline-with-image': SectionsServicesHeadlineWithImage;
       'sections.work-headline-with-image': SectionsWorkHeadlineWithImage;
       'shared.description-media': SharedDescriptionMedia;
       'shared.quote': SharedQuote;
