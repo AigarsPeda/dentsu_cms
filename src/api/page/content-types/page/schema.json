@@ -28,16 +28,9 @@
     "contentSections": {
       "type": "dynamiczone",
       "components": [
-        "sections.hero",
-        "sections.bottom-actions",
-        "sections.feature-columns-group",
-        "sections.feature-rows-group",
-        "sections.testimonials-group",
         "sections.large-video",
         "sections.rich-text",
-        "sections.pricing",
         "sections.lead-form",
-        "sections.features",
         "sections.heading",
         "sections.hero-large-section",
         "sections.info-block",
@@ -47,11 +40,11 @@
         "sections.contact-us",
         "sections.page-title",
         "sections.post-section",
-        "sections.large-info-section",
         "sections.customer-feedback",
         "sections.work-headline-with-image",
         "sections.post-section-with-image",
-        "sections.post-statistic-with-image"
+        "sections.post-statistic-with-image",
+        "sections.image-carousel"
       ],
       "pluginOptions": {
         "i18n": {

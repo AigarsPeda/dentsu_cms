@@ -10,12 +10,23 @@ const populate = {
       picture: {
         fields: ["url", "alternativeText", "caption", "width", "height"],
       },
+      media: {
+        fields: ["url", "alternativeText", "caption", "width", "height"],
+      },
       buttons: {
         populate: true,
       },
       feature: {
         populate: {
           fields: ["title", "description", "showLink", "newTab", "url", "text"],
+          media: {
+            fields: ["url", "alternativeText", "caption", "width", "height"],
+          },
+        },
+      },
+      imageCarousel: {
+        populate: {
+          fields: ["url"],
           media: {
             fields: ["url", "alternativeText", "caption", "width", "height"],
           },

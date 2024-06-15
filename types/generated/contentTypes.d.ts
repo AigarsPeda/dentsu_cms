@@ -1052,16 +1052,9 @@ export interface ApiPagePage extends Schema.CollectionType {
       }>;
     contentSections: Attribute.DynamicZone<
       [
-        'sections.hero',
-        'sections.bottom-actions',
-        'sections.feature-columns-group',
-        'sections.feature-rows-group',
-        'sections.testimonials-group',
         'sections.large-video',
         'sections.rich-text',
-        'sections.pricing',
         'sections.lead-form',
-        'sections.features',
         'sections.heading',
         'sections.hero-large-section',
         'sections.info-block',
@@ -1071,11 +1064,11 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.contact-us',
         'sections.page-title',
         'sections.post-section',
-        'sections.large-info-section',
         'sections.customer-feedback',
         'sections.work-headline-with-image',
         'sections.post-section-with-image',
-        'sections.post-statistic-with-image'
+        'sections.post-statistic-with-image',
+        'sections.image-carousel'
       ]
     > &
       Attribute.SetPluginOptions<{
