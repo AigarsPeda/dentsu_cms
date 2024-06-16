@@ -570,6 +570,9 @@ export interface SectionsServices extends Schema.Component {
     services: Attribute.Component<'elements.service', true>;
     pictureOnRight: Attribute.Boolean & Attribute.DefaultTo<false>;
     media: Attribute.Media<'images' | 'videos', true>;
+    logo: Attribute.Media<'images'>;
+    fontColor: Attribute.Component<'shared.font-color'>;
+    mobLogo: Attribute.Media<'images'>;
   };
 }
 
@@ -593,6 +596,16 @@ export interface SharedDescriptionMedia extends Schema.Component {
   };
   attributes: {
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface SharedFontColor extends Schema.Component {
+  collectionName: 'components_shared_font_colors';
+  info: {
+    displayName: 'font color';
+  };
+  attributes: {
+    fontColor: Attribute.Enumeration<['light', 'dark']>;
   };
 }
 
@@ -707,6 +720,7 @@ declare module '@strapi/types' {
       'sections.services': SectionsServices;
       'sections.work-headline-with-image': SectionsWorkHeadlineWithImage;
       'shared.description-media': SharedDescriptionMedia;
+      'shared.font-color': SharedFontColor;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;

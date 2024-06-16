@@ -10,10 +10,19 @@ const populate = {
       picture: {
         fields: ["url", "alternativeText", "caption", "width", "height"],
       },
+      logo: {
+        fields: ["url", "alternativeText", "caption", "width", "height"],
+      },
+      mobLogo: {
+        fields: ["url", "alternativeText", "caption", "width", "height"],
+      },
       media: {
         fields: ["url", "alternativeText", "caption", "width", "height"],
       },
       buttons: {
+        populate: true,
+      },
+      fontColor: {
         populate: true,
       },
       feature: {

@@ -17,12 +17,33 @@
       "default": false
     },
     "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
+      ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "fontColor": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.font-color"
+    },
+    "mobLogo": {
+      "allowedTypes": [
+        "images"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }
