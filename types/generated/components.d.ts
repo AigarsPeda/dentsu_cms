@@ -388,17 +388,6 @@ export interface SectionsCustomerFeedback extends Schema.Component {
   };
 }
 
-export interface SectionsHeading extends Schema.Component {
-  collectionName: 'components_sections_headings';
-  info: {
-    displayName: 'Heading';
-  };
-  attributes: {
-    heading: Attribute.String & Attribute.Required;
-    description: Attribute.String;
-  };
-}
-
 export interface SectionsHeroLargeSection extends Schema.Component {
   collectionName: 'components_sections_hero_large_sections';
   info: {
@@ -446,38 +435,6 @@ export interface SectionsInfoBlock extends Schema.Component {
     description: Attribute.Text & Attribute.Required;
     description_2: Attribute.Text;
     description_3: Attribute.Text;
-  };
-}
-
-export interface SectionsLargeVideo extends Schema.Component {
-  collectionName: 'components_slices_large_videos';
-  info: {
-    name: 'LargeVideo';
-    displayName: 'Large video';
-    icon: 'play-circle';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.String;
-    video: Attribute.Media<'videos'> & Attribute.Required;
-    poster: Attribute.Media<'images'>;
-  };
-}
-
-export interface SectionsLeadForm extends Schema.Component {
-  collectionName: 'components_sections_lead_forms';
-  info: {
-    name: 'Lead form';
-    displayName: 'Lead form';
-    icon: 'at';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    emailPlaceholder: Attribute.String;
-    submitButton: Attribute.Component<'links.button'>;
-    location: Attribute.String;
-    description: Attribute.Text;
   };
 }
 
@@ -703,13 +660,10 @@ declare module '@strapi/types' {
       'sections.client-section': SectionsClientSection;
       'sections.contact-us': SectionsContactUs;
       'sections.customer-feedback': SectionsCustomerFeedback;
-      'sections.heading': SectionsHeading;
       'sections.hero-large-section': SectionsHeroLargeSection;
       'sections.image-carousel': SectionsImageCarousel;
       'sections.info-block-with-image': SectionsInfoBlockWithImage;
       'sections.info-block': SectionsInfoBlock;
-      'sections.large-video': SectionsLargeVideo;
-      'sections.lead-form': SectionsLeadForm;
       'sections.logos-section': SectionsLogosSection;
       'sections.page-title': SectionsPageTitle;
       'sections.post-section-with-image': SectionsPostSectionWithImage;

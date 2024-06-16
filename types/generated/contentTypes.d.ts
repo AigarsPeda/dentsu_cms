@@ -1052,10 +1052,7 @@ export interface ApiPagePage extends Schema.CollectionType {
       }>;
     contentSections: Attribute.DynamicZone<
       [
-        'sections.large-video',
         'sections.rich-text',
-        'sections.lead-form',
-        'sections.heading',
         'sections.hero-large-section',
         'sections.info-block',
         'sections.info-block-with-image',
