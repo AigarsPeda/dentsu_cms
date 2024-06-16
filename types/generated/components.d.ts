@@ -90,6 +90,21 @@ export interface ElementsLocales extends Schema.Component {
   };
 }
 
+export interface ElementsNewsPost extends Schema.Component {
+  collectionName: 'components_elements_news_posts';
+  info: {
+    displayName: 'newsPost';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    thumbnail: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
+    url: Attribute.String;
+    buttonTitle: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface ElementsNotificationBanner extends Schema.Component {
   collectionName: 'components_elements_notification_banners';
   info: {
@@ -449,6 +464,26 @@ export interface SectionsLogosSection extends Schema.Component {
   };
 }
 
+export interface SectionsNewsPostSection extends Schema.Component {
+  collectionName: 'components_sections_news_post_sections';
+  info: {
+    displayName: 'News post section';
+  };
+  attributes: {
+    newsPost: Attribute.Component<'elements.news-post', true>;
+  };
+}
+
+export interface SectionsNewsPostTitle extends Schema.Component {
+  collectionName: 'components_sections_news_post_titles';
+  info: {
+    displayName: 'News post title';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface SectionsPageTitle extends Schema.Component {
   collectionName: 'components_sections_page_titles';
   info: {
@@ -456,6 +491,16 @@ export interface SectionsPageTitle extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
+  };
+}
+
+export interface SectionsPostImage extends Schema.Component {
+  collectionName: 'components_sections_post_images';
+  info: {
+    displayName: 'Post image';
+  };
+  attributes: {
+    media: Attribute.Media<'images' | 'videos', true>;
   };
 }
 
@@ -490,6 +535,16 @@ export interface SectionsPostStatisticWithImage extends Schema.Component {
   attributes: {
     feature: Attribute.Component<'elements.some-thing'>;
     statistic: Attribute.Component<'elements.statistic', true>;
+  };
+}
+
+export interface SectionsPost extends Schema.Component {
+  collectionName: 'components_sections_posts';
+  info: {
+    displayName: 'Post';
+  };
+  attributes: {
+    post: Attribute.Blocks & Attribute.Required;
   };
 }
 
@@ -530,6 +585,31 @@ export interface SectionsServices extends Schema.Component {
     logo: Attribute.Media<'images'>;
     fontColor: Attribute.Component<'shared.font-color'>;
     mobLogo: Attribute.Media<'images'>;
+  };
+}
+
+export interface SectionsSocialShare extends Schema.Component {
+  collectionName: 'components_sections_social_shares';
+  info: {
+    displayName: 'Social share';
+    description: '';
+  };
+  attributes: {
+    facebook: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    linkedin: Attribute.Boolean & Attribute.DefaultTo<true>;
+    title: Attribute.String;
+  };
+}
+
+export interface SectionsTable extends Schema.Component {
+  collectionName: 'components_sections_tables';
+  info: {
+    displayName: 'table';
+  };
+  attributes: {
+    tableMarkdown: Attribute.RichText;
   };
 }
 
@@ -640,6 +720,7 @@ declare module '@strapi/types' {
       'elements.footer-section': ElementsFooterSection;
       'elements.hero-large': ElementsHeroLarge;
       'elements.locales': ElementsLocales;
+      'elements.news-post': ElementsNewsPost;
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;
       'elements.post-preview-item': ElementsPostPreviewItem;
@@ -665,13 +746,19 @@ declare module '@strapi/types' {
       'sections.info-block-with-image': SectionsInfoBlockWithImage;
       'sections.info-block': SectionsInfoBlock;
       'sections.logos-section': SectionsLogosSection;
+      'sections.news-post-section': SectionsNewsPostSection;
+      'sections.news-post-title': SectionsNewsPostTitle;
       'sections.page-title': SectionsPageTitle;
+      'sections.post-image': SectionsPostImage;
       'sections.post-section-with-image': SectionsPostSectionWithImage;
       'sections.post-section': SectionsPostSection;
       'sections.post-statistic-with-image': SectionsPostStatisticWithImage;
+      'sections.post': SectionsPost;
       'sections.rich-text': SectionsRichText;
       'sections.services-headline-with-image': SectionsServicesHeadlineWithImage;
       'sections.services': SectionsServices;
+      'sections.social-share': SectionsSocialShare;
+      'sections.table': SectionsTable;
       'sections.work-headline-with-image': SectionsWorkHeadlineWithImage;
       'shared.description-media': SharedDescriptionMedia;
       'shared.font-color': SharedFontColor;

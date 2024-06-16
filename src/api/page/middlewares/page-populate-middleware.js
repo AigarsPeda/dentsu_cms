@@ -19,6 +19,9 @@ const populate = {
       media: {
         fields: ["url", "alternativeText", "caption", "width", "height"],
       },
+      thumbnail: {
+        fields: ["url", "alternativeText", "caption", "width", "height"],
+      },
       buttons: {
         populate: true,
       },
@@ -37,6 +40,14 @@ const populate = {
         populate: {
           fields: ["url"],
           media: {
+            fields: ["url", "alternativeText", "caption", "width", "height"],
+          },
+        },
+      },
+      newsPost: {
+        populate: {
+          fields: ["url", "title", "description", "buttonTitle"],
+          thumbnail: {
             fields: ["url", "alternativeText", "caption", "width", "height"],
           },
         },
