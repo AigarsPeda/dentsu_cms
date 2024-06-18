@@ -25,6 +25,16 @@ export interface ElementsClient extends Schema.Component {
   };
 }
 
+export interface ElementsCompyToContact extends Schema.Component {
+  collectionName: 'components_elements_compy_to_contacts';
+  info: {
+    displayName: 'compyToContact';
+  };
+  attributes: {
+    companyTitle: Attribute.String;
+  };
+}
+
 export interface ElementsEmployee extends Schema.Component {
   collectionName: 'components_elements_employees';
   info: {
@@ -66,6 +76,20 @@ export interface ElementsFooterSection extends Schema.Component {
   };
 }
 
+export interface ElementsFormFields extends Schema.Component {
+  collectionName: 'components_elements_form_fields';
+  info: {
+    displayName: 'formFields';
+    description: '';
+  };
+  attributes: {
+    fieldName: Attribute.String;
+    fieldType: Attribute.Enumeration<
+      ['text', 'number', 'textArea', 'email', 'select']
+    >;
+  };
+}
+
 export interface ElementsHeroLarge extends Schema.Component {
   collectionName: 'components_elements_hero_larges';
   info: {
@@ -75,6 +99,16 @@ export interface ElementsHeroLarge extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text;
     img: Attribute.Media<'images' | 'videos', true>;
+  };
+}
+
+export interface ElementsLeadForms extends Schema.Component {
+  collectionName: 'components_elements_lead_forms';
+  info: {
+    displayName: 'leadForms';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
   };
 }
 
@@ -137,11 +171,6 @@ export interface ElementsPlan extends Schema.Component {
     isRecommended: Attribute.Boolean;
     price: Attribute.Decimal;
     pricePeriod: Attribute.String;
-    product_features: Attribute.Relation<
-      'elements.plan',
-      'oneToMany',
-      'api::product-feature.product-feature'
-    >;
   };
 }
 
@@ -392,6 +421,24 @@ export interface SectionsContactUs extends Schema.Component {
   };
 }
 
+export interface SectionsContacts extends Schema.Component {
+  collectionName: 'components_sections_contacts';
+  info: {
+    displayName: 'contacts';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    workingTime: Attribute.String & Attribute.Required;
+    address: Attribute.String & Attribute.Required;
+    phoneNumber: Attribute.String & Attribute.Required;
+    email: Attribute.String & Attribute.Required;
+    leadFormEmail: Attribute.String & Attribute.Required;
+    companyToContact: Attribute.Component<'elements.compy-to-contact', true>;
+    formFields: Attribute.Component<'elements.form-fields', true>;
+  };
+}
+
 export interface SectionsCustomerFeedback extends Schema.Component {
   collectionName: 'components_sections_customer_feedbacks';
   info: {
@@ -400,6 +447,17 @@ export interface SectionsCustomerFeedback extends Schema.Component {
   };
   attributes: {
     feature: Attribute.Component<'elements.feedback', true>;
+  };
+}
+
+export interface SectionsFullWidthImage extends Schema.Component {
+  collectionName: 'components_sections_full_width_images';
+  info: {
+    displayName: 'Full Width Image';
+    description: '';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'videos', true> & Attribute.Required;
   };
 }
 
@@ -613,6 +671,19 @@ export interface SectionsTable extends Schema.Component {
   };
 }
 
+export interface SectionsVacanciesHeadline extends Schema.Component {
+  collectionName: 'components_sections_vacancies_headlines';
+  info: {
+    displayName: 'Vacancies headline';
+  };
+  attributes: {
+    mainHeadline: Attribute.Text & Attribute.Required;
+    headline: Attribute.Text & Attribute.Required;
+    headline2: Attribute.Text;
+    headline3: Attribute.Text;
+  };
+}
+
 export interface SectionsWorkHeadlineWithImage extends Schema.Component {
   collectionName: 'components_sections_work_headline_with_images';
   info: {
@@ -715,10 +786,13 @@ declare module '@strapi/types' {
     export interface Components {
       'elements.carousel-media': ElementsCarouselMedia;
       'elements.client': ElementsClient;
+      'elements.compy-to-contact': ElementsCompyToContact;
       'elements.employee': ElementsEmployee;
       'elements.feedback': ElementsFeedback;
       'elements.footer-section': ElementsFooterSection;
+      'elements.form-fields': ElementsFormFields;
       'elements.hero-large': ElementsHeroLarge;
+      'elements.lead-forms': ElementsLeadForms;
       'elements.locales': ElementsLocales;
       'elements.news-post': ElementsNewsPost;
       'elements.notification-banner': ElementsNotificationBanner;
@@ -740,7 +814,9 @@ declare module '@strapi/types' {
       'meta.metadata': MetaMetadata;
       'sections.client-section': SectionsClientSection;
       'sections.contact-us': SectionsContactUs;
+      'sections.contacts': SectionsContacts;
       'sections.customer-feedback': SectionsCustomerFeedback;
+      'sections.full-width-image': SectionsFullWidthImage;
       'sections.hero-large-section': SectionsHeroLargeSection;
       'sections.image-carousel': SectionsImageCarousel;
       'sections.info-block-with-image': SectionsInfoBlockWithImage;
@@ -759,6 +835,7 @@ declare module '@strapi/types' {
       'sections.services': SectionsServices;
       'sections.social-share': SectionsSocialShare;
       'sections.table': SectionsTable;
+      'sections.vacancies-headline': SectionsVacanciesHeadline;
       'sections.work-headline-with-image': SectionsWorkHeadlineWithImage;
       'shared.description-media': SharedDescriptionMedia;
       'shared.font-color': SharedFontColor;

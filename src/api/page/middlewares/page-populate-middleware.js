@@ -10,6 +10,9 @@ const populate = {
       picture: {
         fields: ["url", "alternativeText", "caption", "width", "height"],
       },
+      image: {
+        fields: ["url", "alternativeText", "caption", "width", "height"],
+      },
       logo: {
         fields: ["url", "alternativeText", "caption", "width", "height"],
       },
@@ -26,6 +29,12 @@ const populate = {
         populate: true,
       },
       fontColor: {
+        populate: true,
+      },
+      formFields: {
+        populate: true,
+      },
+      companyToContact: {
         populate: true,
       },
       feature: {

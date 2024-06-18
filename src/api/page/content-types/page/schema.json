@@ -49,7 +49,10 @@
         "sections.post-image",
         "sections.post",
         "sections.table",
-        "sections.social-share"
+        "sections.social-share",
+        "sections.contacts",
+        "sections.full-width-image",
+        "sections.vacancies-headline"
       ],
       "pluginOptions": {
         "i18n": {
