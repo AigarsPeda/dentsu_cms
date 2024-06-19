@@ -266,6 +266,19 @@ export interface ElementsTesting extends Schema.Component {
   };
 }
 
+export interface ElementsVacancies extends Schema.Component {
+  collectionName: 'components_elements_vacancies';
+  info: {
+    displayName: 'Vacancies';
+    description: '';
+  };
+  attributes: {
+    vacancyName: Attribute.String & Attribute.Required;
+    buttonTitle: Attribute.String & Attribute.Required;
+    vacancyDescription: Attribute.Blocks & Attribute.Required;
+  };
+}
+
 export interface LayoutFooter extends Schema.Component {
   collectionName: 'components_layout_footers';
   info: {
@@ -684,6 +697,17 @@ export interface SectionsVacanciesHeadline extends Schema.Component {
   };
 }
 
+export interface SectionsVacancies extends Schema.Component {
+  collectionName: 'components_sections_vacancies';
+  info: {
+    displayName: 'Vacancies';
+    description: '';
+  };
+  attributes: {
+    vacancies: Attribute.Component<'elements.vacancies', true>;
+  };
+}
+
 export interface SectionsWorkHeadlineWithImage extends Schema.Component {
   collectionName: 'components_sections_work_headline_with_images';
   info: {
@@ -804,6 +828,7 @@ declare module '@strapi/types' {
       'elements.test': ElementsTest;
       'elements.testimonial': ElementsTestimonial;
       'elements.testing': ElementsTesting;
+      'elements.vacancies': ElementsVacancies;
       'layout.footer': LayoutFooter;
       'layout.logo': LayoutLogo;
       'layout.navbar': LayoutNavbar;
@@ -836,6 +861,7 @@ declare module '@strapi/types' {
       'sections.social-share': SectionsSocialShare;
       'sections.table': SectionsTable;
       'sections.vacancies-headline': SectionsVacanciesHeadline;
+      'sections.vacancies': SectionsVacancies;
       'sections.work-headline-with-image': SectionsWorkHeadlineWithImage;
       'shared.description-media': SharedDescriptionMedia;
       'shared.font-color': SharedFontColor;

@@ -34,6 +34,9 @@ const populate = {
       formFields: {
         populate: true,
       },
+      vacancies: {
+        populate: true,
+      },
       companyToContact: {
         populate: true,
       },
