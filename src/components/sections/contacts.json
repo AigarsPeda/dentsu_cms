@@ -41,6 +41,20 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.form-fields"
+    },
+    "googleIcon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "wazeIcon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

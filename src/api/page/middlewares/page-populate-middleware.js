@@ -25,6 +25,12 @@ const populate = {
       thumbnail: {
         fields: ["url", "alternativeText", "caption", "width", "height"],
       },
+      googleIcon: {
+        fields: ["url", "alternativeText", "caption", "width", "height"],
+      },
+      wazeIcon: {
+        fields: ["url", "alternativeText", "caption", "width", "height"],
+      },
       buttons: {
         populate: true,
       },

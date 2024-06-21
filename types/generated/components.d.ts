@@ -449,6 +449,8 @@ export interface SectionsContacts extends Schema.Component {
     leadFormEmail: Attribute.String & Attribute.Required;
     companyToContact: Attribute.Component<'elements.compy-to-contact', true>;
     formFields: Attribute.Component<'elements.form-fields', true>;
+    googleIcon: Attribute.Media<'images'>;
+    wazeIcon: Attribute.Media<'images'>;
   };
 }
 
