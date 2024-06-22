@@ -451,6 +451,9 @@ export interface SectionsContacts extends Schema.Component {
     formFields: Attribute.Component<'elements.form-fields', true>;
     googleIcon: Attribute.Media<'images'>;
     wazeIcon: Attribute.Media<'images'>;
+    buttonTitle: Attribute.String & Attribute.Required;
+    privacyCookiesPolicy: Attribute.String & Attribute.Required;
+    agreementToReceiveInfo: Attribute.String & Attribute.Required;
   };
 }
 

@@ -43,18 +43,32 @@
       "component": "elements.form-fields"
     },
     "googleIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "wazeIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "buttonTitle": {
+      "type": "string",
+      "required": true
+    },
+    "privacyCookiesPolicy": {
+      "type": "string",
+      "required": true
+    },
+    "agreementToReceiveInfo": {
+      "type": "string",
+      "required": true
     }
   }
 }
