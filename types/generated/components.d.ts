@@ -276,6 +276,7 @@ export interface ElementsVacancies extends Schema.Component {
     vacancyName: Attribute.String & Attribute.Required;
     buttonTitle: Attribute.String & Attribute.Required;
     vacancyDescription: Attribute.Blocks & Attribute.Required;
+    contactEmail: Attribute.String & Attribute.Required;
   };
 }
 
@@ -454,6 +455,7 @@ export interface SectionsContacts extends Schema.Component {
     buttonTitle: Attribute.String & Attribute.Required;
     privacyCookiesPolicy: Attribute.String & Attribute.Required;
     agreementToReceiveInfo: Attribute.String & Attribute.Required;
+    contactEmail: Attribute.String & Attribute.Required;
   };
 }
 
