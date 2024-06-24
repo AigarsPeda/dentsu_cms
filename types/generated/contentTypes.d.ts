@@ -488,7 +488,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.contacts',
         'sections.full-width-image',
         'sections.vacancies-headline',
-        'sections.vacancies'
+        'sections.vacancies',
+        'shared.video-embed'
       ]
     > &
       Attribute.SetPluginOptions<{

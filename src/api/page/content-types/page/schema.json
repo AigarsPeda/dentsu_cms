@@ -53,7 +53,8 @@
         "sections.contacts",
         "sections.full-width-image",
         "sections.vacancies-headline",
-        "sections.vacancies"
+        "sections.vacancies",
+        "shared.video-embed"
       ],
       "pluginOptions": {
         "i18n": {
