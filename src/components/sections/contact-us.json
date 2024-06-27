@@ -28,6 +28,9 @@
     "buttonTitle": {
       "type": "string",
       "required": false
+    },
+    "redirectUrl": {
+      "type": "string"
     }
   }
 }

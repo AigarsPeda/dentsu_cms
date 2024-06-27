@@ -432,6 +432,7 @@ export interface SectionsContactUs extends Schema.Component {
     isContactUsButton: Attribute.Boolean & Attribute.DefaultTo<true>;
     contactEmail: Attribute.String;
     buttonTitle: Attribute.String;
+    redirectUrl: Attribute.String;
   };
 }
 
